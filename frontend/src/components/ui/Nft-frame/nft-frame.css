@@ -1,0 +1,241 @@
+
+
+:root {
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  --Very-dark-blue-mainBG: hsl(217, 54%, 11%);
+  --Very-dark-blue-cardBG: hsl(216, 50%, 16%);
+  --Very-dark-blue-line: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+  --body-font-size:18px;
+}
+
+
+
+.containerFrame {
+  background-color: var(--Very-dark-blue-cardBG);
+  width: 386px;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  border-radius: 10px;
+margin-top: 50px;
+  margin-bottom: 50px;
+}
+.image {
+  display: flex;
+  margin: 1rem auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+
+.image .active{
+  position:absolute;
+  width: 320px;
+  height: 340px;
+background-color: #fff;
+opacity:0;
+border-radius:10px;
+}
+.image .active img{
+  width: 60px;
+  height:60px;
+  position:absolute;
+  z-index:99;
+left:40%;
+top:45%;
+border-radius:10px;
+}
+
+.image .active:hover{
+  background-color:var(--Cyan);
+  opacity:0.6;
+
+  
+}
+.image .active img:hover{
+  /* background-color:var(-); */
+  opacity:1;
+  
+}
+.image img {
+  width: 320px;
+  height: 340px;
+  margin: auto;
+  border-radius: 10px;
+}
+.content {
+  /* border:1px solid red; */
+  display: flex;
+  flex-direction: column;
+  font-family: "Outfit", sans-serif;
+}
+
+.content h1 {
+  color: var(--White);
+
+  /* border:1px solid rgb(173, 229, 7); */
+  width: 330px;
+
+  font-weight: 600;
+}
+.content h1:hover{
+  color:var(--Cyan);
+  cursor: pointer;
+}
+
+.content .desc {
+  /* border:1px solid rgb(0, 161, 11); */
+  color: var(--Soft-blue);
+  font-weight: 300;
+  word-spacing: 5px;
+  line-height: 1.3;
+  width: 330px;
+  margin: auto;
+  padding: 2px 6px;
+  margin-top: 1rem;
+  /* font-size: ; */
+}
+
+.content .value-days {
+  /* border:1px solid rgb(217, 255, 47); */
+  display: flex;
+  justify-content: space-between;
+  width: 330px;
+
+  font-weight: 400;
+ 
+  align-items: center;
+}
+
+.content .value-days .value-eth {
+  color: var(--Cyan);
+  /* border:2px solid rgb(152, 2, 2); */
+  display: flex;
+  width: 150px;
+}
+.content .value-days .value-eth > img {
+  margin-right: 10px;
+}
+.content .value-days .days {
+  /* border:2px solid rgb(152, 2, 2); */
+  color: var(--Soft-blue);
+  display: flex;
+  width: 150px;
+  justify-content: flex-end;
+}
+
+.content .value-days .days > img {
+  margin-right: 10px;
+}
+
+.content hr {
+  color: var(--Very-dark-blue-line);
+  width: 330px;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.content .creation {
+  /* border:1px solid rgb(120, 248, 142); */
+  color: var(--Soft-blue);
+  width: 330px;
+  margin: auto;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  margin: 1rem auto;
+}
+.content .creation img {
+  width: 30px;
+  margin-right: 1rem;
+  border: 1px solid var(--White);
+  border-radius: 30px;
+}
+
+.content .creation > span {
+  color: var(--White);
+  margin-inline-start: 0.6rem;
+}
+
+.content .creation span:hover{
+  color:var(--Cyan);
+  cursor: pointer;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* for mobile devices */
+
+@media only screen and (max-width: 500px) {
+  main {
+    /* background-color: rgb(232, 137, 137); */
+    width: fit-content;
+    margin: 3rem auto;
+    border-radius: 10px;
+  }
+
+  .container {
+    background-color: var(--Very-dark-blue-cardBG);
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .image .active{
+    position:absolute;
+    width:290px;
+    height:290px;
+  background-color: #fff;
+  opacity:0;
+  border-radius:10px;
+  }
+
+  .image {
+    margin:0.7rem auto;
+    border-radius: 10px;
+  }
+  .image img {
+    width: 290px;
+    height: 290px;
+    margin: auto;
+   
+    border-radius: 10px;
+  }
+
+
+
+
+
+  .content h1,
+  .content .desc,
+  .content .value-days,
+  .content hr,
+  .content .creation {
+    /* border:2px solid yellow; */
+    width: 280px;
+    margin: auto;
+    margin-top:1rem;
+  }
+  .content h1{
+    font-size:var(--body-font-size);
+  }
+  .content .desc {
+    font-weight: 300;
+
+    word-spacing: 2px;
+    line-height: 1.3;
+    font-size:0.9rem;
+   
+  }
+  .content .value-days ,.content .creation{
+    font-size:0.9rem;
+  }
+}

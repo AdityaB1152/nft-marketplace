@@ -1,9 +1,24 @@
-import React from 'react'
+import React from "react";
 
-function Home() {
+import HeroSection from "../components/ui/HeroSection";
+
+import LiveAuction from "../components/ui/Live-Auction/LiveAuction";
+import SellerSection from "../components/ui/Seller-section/SellerSection";
+
+import Trending from "../components/ui/Trending-section/Trending";
+
+import StepSection from "../components/ui/Step-section/StepSection";
+
+const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <>
+      <HeroSection />
+      <LiveAuction />
+      <SellerSection />
+      <Trending />
+      <StepSection />
+    </>
+  );
+};
 
-export default Home
+export default Home;
