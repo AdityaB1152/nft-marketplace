@@ -61,19 +61,5 @@ To get started with the Frontend (React App) for the NFT marketplace, follow the
 
 ## Contributing
 
-Contributions are welcome! If you have any suggestions, enhancements, or bug fixes, please submit a pull request. For major changes, please open an issue first to discuss the proposed changes.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgements
-
-- [React](https://reactjs.org/) - JavaScript library for building user interfaces.
-- [Create React App](https://create-react-app.dev/) - Tool to bootstrap React applications.
-- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
-- [Unsplash](https://unsplash.com/) - Source of royalty-free images used in the application.
-
----
-
-Feel free to reach out to us with any questions or feedback. Happy minting and trading! 🚀
+Contributions are welcome! If you have any suggestions, enhancements, or bug fixes, please
+Feel free to reach out to me with any questions or feedback. 
