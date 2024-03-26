@@ -1,8 +1,12 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./header.css";
 import { Container } from "reactstrap";
 
 import { NavLink, Link } from "react-router-dom";
+
+/*
+ToDO : Change Connect Wallet Icon when Connected
+*/
 
 const NAV__LINKS = [
   {
@@ -28,24 +32,46 @@ const Header = () => {
 
   const menuRef = useRef(null);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (
-        document.body.scrollTop > 80 ||
-        document.documentElement.scrollTop > 80
-      ) {
-        headerRef.current.classList.add("header__shrink");
-      } else {
-        headerRef.current.classList.remove("header__shrink");
-      }
-    });
+  const [walletAddress , setWalletAddress] = useState("");
 
-    return () => {
-      window.removeEventListener("scroll");
-    };
+  useEffect(() => {
+    // window.addEventListener("scroll", () => {
+    //   if (
+    //     document.body.scrollTop > 80 ||
+    //     document.documentElement.scrollTop > 80
+    //   ) {
+    //     headerRef.current.classList.add("header__shrink");
+    //   } else {
+    //     headerRef.current.classList.remove("header__shrink");
+    //   }
+    // });
+
+    // return () => {
+    //   window.removeEventListener("scroll");
+    // };
   }, []);
 
   const toggleMenu = () => menuRef.current.classList.toggle("active__menu");
+
+  const connectWallet = async () => {
+    console.log("Button clicked")
+    if(window.ethereum){
+      try{
+        const accounts = await window.ethereum.request({
+          method:'eth_requestAccounts'
+        });
+        console.log(accounts);
+        setWalletAddress(accounts[0]);
+      }
+      catch(err){
+        console.log(err);
+      }
+    }
+    else {
+      console.log("Metamask not detected")
+    }
+
+  }
 
   return (
     <header className="header" ref={headerRef}>
@@ -78,11 +104,12 @@ const Header = () => {
           </div>
 
           <div className="nav__right d-flex align-items-center gap-5 ">
-            <button className="btn d-flex gap-2 align-items-center">
+            <button className="btn d-flex gap-2 align-items-center" 
+            onClick={ connectWallet}>
               <span>
                 <i class="ri-wallet-line"></i>
               </span>
-              <Link to="/wallet">Connect Wallet</Link>
+             Connect Wallet
             </button>
 
             <span className="mobile__menu">

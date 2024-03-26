@@ -1,6 +1,7 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./header.css";
 import { Container } from "reactstrap";
+import { ethers } from "ethers";
 
 import { NavLink, Link } from "react-router-dom";
 
@@ -24,9 +25,31 @@ const NAV__LINKS = [
 ];
 
 const Header = () => {
+
+  const [walletAddress , setWalletAddress] = useState();
   const headerRef = useRef(null);
 
   const menuRef = useRef(null);
+
+  const connectWallet = async () => {
+    console.log("Button clicked")
+    if(window.ethereum){
+      try{
+        const accounts = await window.ethereum.request({
+          method:'eth_requestAccounts'
+        });
+        console.log(accounts);
+        setWalletAddress(accounts[0]);
+      }
+      catch(err){
+        console.log(err);
+      }
+    }
+    else {
+      console.log("Metamask not detected")
+    }
+
+  }
 
 
 
@@ -63,12 +86,7 @@ const Header = () => {
           </div>
 
           <div className="nav__right d-flex align-items-center gap-5 ">
-            <button className="btn d-flex gap-2 align-items-center">
-              <span>
-                <i class="ri-wallet-line"></i>
-              </span>
-              <Link to="/wallet">Connect Wallet</Link>
-            </button>
+           
 
             <span className="mobile__menu">
               <i class="ri-menu-line" onClick={toggleMenu}></i>
