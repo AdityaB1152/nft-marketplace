@@ -24,6 +24,11 @@ const getAllNFTs = (req , res) => {
     });
 }
 
+const nftsRouter = express.Router();
+const userRouter = express.Router();
+app.use("/api/v1/nfts" , nftsRouter);
+app.use("/api/v1/users" , userRouter);
+
 //Custom Middleware
 app.use((req , res , next) => {
     console.log("Hey I am from middleware function");
@@ -34,10 +39,10 @@ app.use((req,res,next)=>{
 
 })
 
-app.get('/api/v1/nfts', getAllNFTs);
+app.get('/', getAllNFTs);
 
 
-app.get("/api/v1/nfts/:id" , (req , res)=>{
+app.get("/:id" , (req , res)=>{
     console.log(req.params)
 
     const id = req.params.id * 1 ;
@@ -61,7 +66,7 @@ app.get("/api/v1/nfts/:id" , (req , res)=>{
     });
 });
 
-app.patch("/api/v1/nfts/:id" , (req , res) => {
+app.patch("/:id" , (req , res) => {
 
     if(req.params.id * 1 > nfts.length) {
         return res.status(404).json({
@@ -77,7 +82,7 @@ app.patch("/api/v1/nfts/:id" , (req , res) => {
     })
 })
 
-app.post("/api/v1/nfts",(req,res) =>{
+app.post("/nfts",(req,res) =>{
 
     console.log(req)
     const newId = nfts[nfts.length - 1] +1;
