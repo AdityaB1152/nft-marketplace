@@ -8,7 +8,7 @@ import Create from "../pages/Create";
 import Contact from "../pages/Contact";
 
 import Wallet from "../pages/Wallet";
-import NftDetails from "../pages/NftDetails";
+import NftDetails from "../pages/NFTDetails";
 
 const Routers = () => {
   return (

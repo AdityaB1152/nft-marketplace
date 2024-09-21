@@ -35,20 +35,20 @@ const Header = () => {
   const [walletAddress , setWalletAddress] = useState("");
 
   useEffect(() => {
-    // window.addEventListener("scroll", () => {
-    //   if (
-    //     document.body.scrollTop > 80 ||
-    //     document.documentElement.scrollTop > 80
-    //   ) {
-    //     headerRef.current.classList.add("header__shrink");
-    //   } else {
-    //     headerRef.current.classList.remove("header__shrink");
-    //   }
-    // });
+    window.addEventListener("scroll", () => {
+      if (
+        document.body.scrollTop > 80 ||
+        document.documentElement.scrollTop > 80
+      ) {
+        headerRef.current.classList.add("header__shrink");
+      } else {
+        headerRef.current.classList.remove("header__shrink");
+      }
+    });
 
-    // return () => {
-    //   window.removeEventListener("scroll");
-    // };
+    return () => {
+      window.removeEventListener("scroll");
+    };
   }, []);
 
   const toggleMenu = () => menuRef.current.classList.toggle("active__menu");
@@ -103,8 +103,8 @@ const Header = () => {
             </ul>
           </div>
 
-          <div className="nav__right d-flex align-items-center gap-5 ">
-            <button className="btn d-flex gap-2 align-items-center" 
+          <div className="nav__right d-flex align-items-center gap-5 text-white ">
+            <button className="btn d-flex gap-2 align-items-center " 
             onClick={ connectWallet}>
               <span>
                 <i class="ri-wallet-line"></i>
