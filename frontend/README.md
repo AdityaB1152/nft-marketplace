@@ -2,6 +2,25 @@
 
 Welcome to the Frontend repository for our React application, offering a user-friendly interface for interacting with the NFT marketplace. This application allows users to seamlessly mint, sell, buy, bid on NFTs, and view their NFT collections in their digital wallet.
 
+## utils.js
+
+The `utils.js` file contains helper functions for interacting with the NFT Marketplace smart contract on the Ethereum blockchain using `ethers.js`. It provides a set of functions to perform common operations within the marketplace, including creating, reselling, and purchasing tokens, as well as fetching unsold items. These functions are designed to work seamlessly with a React-based frontend and rely on Metamask for transaction signing.
+
+### Functions
+
+- **fetchMarketItems**: Fetches the list of unsold NFT items on the marketplace. Returns an array of objects with token details like tokenId, price, seller, and owner.
+- **createToken**: Mints a new token with the provided metadata URI and lists it for sale at a specified price. Requires payment of the marketplace's listing fee.
+- **resellToken**: Allows the current owner to relist their token on the marketplace with a new price. Also requires the listing fee.
+- **buyToken**: Purchases a listed token from the marketplace by paying the asking price.
+
+### Usage
+
+To use these functions in your components or other modules, import them as needed:
+
+```javascript
+import { fetchMarketItems, createToken, resellToken, buyToken } from "./utils";
+
+
 ## Screenshots
 
 ### Home Page
