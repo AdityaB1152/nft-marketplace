@@ -8,7 +8,15 @@ Welcome to the NFT Marketplace Ecosystem repository! This project is a decentral
 - **Buy and Sell NFTs:** A decentralized marketplace for buying and selling NFTs.
 - **Bidding:** Users can participate in auctions by placing bids on NFTs.
 - **View Wallet:** Users can view their NFT collections and transaction history.
-- **Mobile App:** A mobile application developed in Kotlin for a seamless mobile experience.
+- **Mobile App:** A mobile application developed in Kotlin for a seamless mobile experience (In progress).
+
+  ## Verified Smart Contracts
+
+The smart contracts used in this project have been verified on Etherscan, allowing for transparency and ease of access to the contract code and interactions. You can view and interact with the verified contract on Etherscan using the link below:
+
+- [NFTMarketplace Contract on Etherscan](https://sepolia.etherscan.io/address/0xcb7d55196a6a409de49fffcc25ca2828091b72db)
+
+
 
 ## Getting Started
 
