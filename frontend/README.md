@@ -13,12 +13,8 @@ The `utils.js` file contains helper functions for interacting with the NFT Marke
 - **resellToken**: Allows the current owner to relist their token on the marketplace with a new price. Also requires the listing fee.
 - **buyToken**: Purchases a listed token from the marketplace by paying the asking price.
 
-### Usage
+  
 
-To use these functions in your components or other modules, import them as needed:
-
-```javascript
-import { fetchMarketItems, createToken, resellToken, buyToken } from "./utils";```
 
 
 ## Screenshots
