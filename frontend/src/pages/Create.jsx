@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Container, Row, Col } from "reactstrap";
 import CommonSection from "../components/ui/Common-section/CommonSection";
@@ -6,7 +6,12 @@ import NftCard from "../components/ui/Nft-card/NftCard";
 import img from "../assets/images/img-01.jpg";
 import avatar from "../assets/images/ava-01.jpg";
 
+import {provider , getSigner , NFT_CONTRACT_ADDRESS, createToken} from "../utils/web3"
+import NFTMarketplace from "../utils/NFTMarketplace.json";
+
+
 import "../styles/create-item.css";
+import { ethers } from "ethers";
 
 const item = {
   id: "01",
@@ -19,6 +24,44 @@ const item = {
 };
 
 const Create = () => {
+
+  const abi = NFTMarketplace.abi;
+  const [address , setAddress ] = useState();
+
+  requestAccount();
+
+  const handleSubmit = async (e)=>{
+  try{
+    console.log("Inside Try")
+   createToken();
+
+
+  } catch (error){
+    console.log("Error Creating NFT",error);
+  }
+}
+
+  async function requestAccount() {
+    if(window.ethereum){
+      console.log('Detected Metamask');
+
+      try {
+        const accounts = await window.ethereum.request ({
+          method:'eth_requestAccounts'
+        });
+
+        console.log('Account Connected' , accounts);
+        setAddress(accounts[0])
+        console.log(address)
+      } catch(error){
+        console.error('Error Connecting Account:',error)
+      }
+    }
+    else {
+      console.log('Meta Mask not Detected')
+    }
+  }
+
   return (
     <>
       <CommonSection title="Create Item" />
@@ -79,6 +122,7 @@ const Create = () => {
                       className="w-100"
                     ></textarea>
                   </div>
+                  <button type='submit' onSubmit={mintNft()}></button>
                 </form>
               </div>
             </Col>
