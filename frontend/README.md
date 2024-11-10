@@ -18,7 +18,7 @@ The `utils.js` file contains helper functions for interacting with the NFT Marke
 To use these functions in your components or other modules, import them as needed:
 
 ```javascript
-import { fetchMarketItems, createToken, resellToken, buyToken } from "./utils";
+import { fetchMarketItems, createToken, resellToken, buyToken } from "./utils";```
 
 
 ## Screenshots
