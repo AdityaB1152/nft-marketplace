@@ -4,7 +4,7 @@ Welcome to the Frontend repository for our React application, offering a user-fr
 
 ## Utils
 
-The `web3.js`(src/utils/web3.js) file contains helper functions for interacting with the NFT Marketplace smart contract on the Ethereum blockchain using `ethers.js`. It provides a set of functions to perform common operations within the marketplace, including creating, reselling, and purchasing tokens, as well as fetching unsold items. These functions are designed to work seamlessly with a React-based frontend and rely on Metamask for transaction signing.
+The [`web3.js`](src/utils/web3.js) file contains helper functions for interacting with the NFT Marketplace smart contract on the Ethereum blockchain using `ethers.js`. It provides a set of functions to perform common operations within the marketplace, including creating, reselling, and purchasing tokens, as well as fetching unsold items. These functions are designed to work seamlessly with a React-based frontend and rely on Metamask for transaction signing.
 
 
 
